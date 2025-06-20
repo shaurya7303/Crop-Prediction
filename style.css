@@ -1,0 +1,86 @@
+/* Global Styles */
+body {
+    background: linear-gradient(45deg, rgba(0, 153, 255, 0.6), rgba(255, 153, 51, 0.6));
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Georgia', serif;
+    color: #fff;
+  }
+  
+  h1 {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: 32px;
+  }
+  
+  .text-success {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Container Styling */
+  .container {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 25px;
+    color: #fff;
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    margin-top: 30px;
+  }
+  
+  /* Form Styling */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff8c00;
+  }
+  
+  .form-control {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    border-radius: 10px;
+  }
+  
+  .form-control:focus {
+    border-color: #ff8c00;
+    box-shadow: 0 0 5px rgba(255, 140, 0, 0.5);
+  }
+  
+  /* Button Styling */
+  .btn-danger {
+    background-color: #ff8c00;
+    border: none;
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-danger:hover {
+    background-color: #ff5722;
+  }
+  
+  .btn-lg {
+    padding: 15px 35px;
+  }
+  
+  /* Prediction Styling */
+  .prediction {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4caf50;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .prediction h3 {
+    color: #ff8c00;
+  }
+  

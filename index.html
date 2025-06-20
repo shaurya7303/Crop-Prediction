@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Seeds</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css"> <!-- Linking the external stylesheet -->
+  </head>
+  <body>
+    <h1 class="text-center text-success mt-5">Crop Yield Prediction Per Country</h1>
+
+    <div class="container my-4">
+      <h1 class="text-center text-danger">Input All Features Here</h1>
+
+      <form action="/predict" method="POST">
+        <div class="form-group">
+          <label for="Year">Year</label>
+          <input type="number" class="form-control" name="Year" step="any" value="2013">
+        </div>
+        <div class="form-group">
+          <label for="average_rain_fall_mm_per_year">Average Rainfall (mm/year)</label>
+          <input type="number" class="form-control" name="average_rain_fall_mm_per_year" step="any">
+        </div>
+        <div class="form-group">
+          <label for="pesticides_tonnes">Pesticides (tonnes)</label>
+          <input type="number" class="form-control" name="pesticides_tonnes" step="any">
+        </div>
+        <div class="form-group">
+          <label for="avg_temp">Average Temperature (°C)</label>
+          <input type="number" class="form-control" name="avg_temp" step="any">
+        </div>
+        <div class="form-group">
+          <label for="Area">Area (hectares)</label>
+          <input type="text" class="form-control" name="Area">
+        </div>
+        <div class="form-group">
+          <label for="Item">Item (crop)</label>
+          <input type="text" class="form-control" name="Item">
+        </div>
+        <button type="submit" class="btn btn-danger btn-lg btn-block mt-2">Predict</button>
+      </form>
+
+      {% if prediction %}
+        <div class="prediction">
+          <h2>Predicted Yield:</h2>
+          <h3>{{ prediction }}</h3>
+        </div>
+      {% endif %}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </body>
+</html>
