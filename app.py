@@ -3,11 +3,11 @@ import numpy as np
 import pickle
 import os 
 
-# Load models
+
 dtr = pickle.load(open('D:\\EDP\\BP\\P3\\model\\dtr.pkl', 'rb'))
 preprocessor = pickle.load(open('D:\\EDP\\BP\\P3\\model\\preprocessor.pkl', 'rb'))
 
-# Flask app
+
 template_dir = os.path.abspath('D:/EDP/BP/P3/templates')
 app = Flask(__name__, template_folder=template_dir)
 
@@ -19,7 +19,7 @@ def home():
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
-        # Get form data
+        
         Year = float(request.form['Year'])
         average_rain_fall_mm_per_year = float(request.form['average_rain_fall_mm_per_year'])
         pesticides_tonnes = float(request.form['pesticides_tonnes'])
@@ -27,7 +27,7 @@ def predict():
         Area = request.form['Area']
         Item = request.form['Item']
 
-        # Create features array and preprocess
+        
         features = np.array([[Year, average_rain_fall_mm_per_year, pesticides_tonnes, avg_temp, Area, Item]], dtype=object)
         transformed_features = preprocessor.transform(features)
         prediction = dtr.predict(transformed_features)
@@ -40,4 +40,5 @@ def predict():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
